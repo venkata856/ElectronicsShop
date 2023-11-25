@@ -1,0 +1,26 @@
+extends layout
+
+block content
+
+  h1 Category: #{category.name}
+
+  div(style='margin-left:20px;margin-top:20px')
+
+
+  if product_list.length
+    p #[strong Delete this products before deleting this Category]
+    div(style='margin-left:20px;margin-top:20px')
+    
+      each product in product_list
+        hr
+        dt
+          a(href=product.url) #{product.name}
+
+  else
+    p Do you really want to delete this Category
+      
+      form(method='POST' action='')
+        div.form-group
+          input#categoryid.form-control(type='hidden',name='categoryid', required='true', value=category._id )
+
+        button.btn.btn-primary(type='submit') Delete

@@ -1,0 +1,22 @@
+extends layout
+
+block content
+  h1 Title: #{product.name}
+  div.productSection
+    div.productImage
+      if product.image === 'NA'
+        img(src='https://picsum.photos/200')
+      else
+        img(src=product.image)
+    div.productDescription
+      p #{product.description}
+      p 
+        a(href=product.brand.url) #{product.brand.name}
+      p
+        a(href=product.category.url) #{product.category.name}
+      p #[strong Available]  #{product.quantity}
+
+  p
+    a(href=product.url+'/delete') Delete Product
+  p
+    a(href=product.url+'/update') Update Product
