@@ -7,7 +7,10 @@ block content
       if product.image === 'NA'
         img(src='https://picsum.photos/200')
       else
-        img(src=product.image)
+        - var u = product.image.contentType
+        - var v = product.image.data.toString('base64')
+        img(src='data:image/'+u+';base64,'+v)
+
     div.productDescription
       p #{product.description}
       p 

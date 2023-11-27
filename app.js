@@ -10,7 +10,7 @@ const catalogRouter = require("./routes/catalog");
 const mongoose = require("mongoose");
 mongoose.set("strictQuery", false);
 const mongoDB =
-  "mongodb+srv://Cluster29001:aWhQfUp8eXp2@cluster29001.1q1gykx.mongodb.net/electronics?retryWrites=true&w=majority";
+  "mongodb+srv://Cluster29001:<password>@cluster29001.1q1gykx.mongodb.net/electronics?retryWrites=true&w=majority";
 
 main().catch((err) => console.log(err));
 async function main() {
